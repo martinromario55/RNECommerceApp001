@@ -10,7 +10,7 @@ import React from 'react';
 import RoundButtom from '../../components/RoundButtom';
 import SocialButton from '../../components/SocialButton';
 
-const SignInScreen = () => {
+const SignInScreen = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
       <StatusBar backgroundColor={'#27dec0'} barStyle={'dark-content'} />
@@ -30,12 +30,14 @@ const SignInScreen = () => {
             BGcolor="#36474f"
             textColor="white"
             outline="white"
+            onPress={() => {}}
           />
           <RoundButtom
             text={'Sign Up'}
             BGcolor="#fff"
             textColor="#27dec0"
             outline="#36474f"
+            onPress={() => navigation.push('SignUp')}
           />
         </View>
         <View style={styles.Social}>

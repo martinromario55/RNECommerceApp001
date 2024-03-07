@@ -1,13 +1,14 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const RoundButtom = ({BGcolor, text, textColor, outline}: any) => {
+const RoundButtom = ({BGcolor, text, textColor, outline, onPress}: any) => {
   return (
     <TouchableOpacity
       style={[
         styles.ButtonStyle,
         {backgroundColor: BGcolor, borderColor: outline},
-      ]}>
+      ]}
+      onPress={() => onPress()}>
       <Text style={[styles.ButtonText, {color: textColor}]}>{text}</Text>
     </TouchableOpacity>
   );

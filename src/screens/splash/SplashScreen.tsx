@@ -3,7 +3,7 @@ import React from 'react';
 
 const SplashScreen = ({navigation}: any) => {
   setTimeout(() => {
-    navigation.navigate('SignIn');
+    navigation.replace('SignIn');
   }, 2000);
   return (
     <ImageBackground
