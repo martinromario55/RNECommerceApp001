@@ -1,7 +1,18 @@
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {_signInWithGoogle} from '../config/firebase/GoogleSignIn';
 
 const SocialButton = () => {
+  const googleSignIn = async () => {
+    _signInWithGoogle().then((data: any) => {
+      if (!data) {
+        console.log('=>Error:, No DATA ');
+        return;
+      }
+      console.log('>Success', data);
+    });
+  };
+
   return (
     <View style={styles.socialIcons}>
       <TouchableOpacity>
@@ -10,7 +21,7 @@ const SocialButton = () => {
           source={require('../assets/images/facebook.png')}
         />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => googleSignIn()}>
         <Image
           style={styles.IconImage}
           source={require('../assets/images/google.png')}
